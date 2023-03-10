@@ -4,7 +4,7 @@ import sys
 
 def calculateArea(p1, p2, p3):
     """
-    Calculates the area of a triangle given its three vertices.
+    Calculates the area of a triangle given its three vertices using Shoelace formula.
     """
     return abs((p1[0] * (p2[1] - p3[1]) + p2[0] * (p3[1] - p1[1]) + p3[0] * (p1[1] - p2[1])) / 2)
 
@@ -41,7 +41,7 @@ def main():
     # calculate the area of each triangle and update the maximum area
     for triangle in triangles:
         currentArea = calculateArea(triangle[0], triangle[1], triangle[2])
-        if currentArea >= maxArea:
+        if currentArea > maxArea:
             maxArea = currentArea
 
     # print the maximum area of a triangle
